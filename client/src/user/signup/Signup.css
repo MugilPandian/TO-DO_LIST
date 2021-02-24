@@ -24,9 +24,13 @@
 
 .signup-form input {
     margin-bottom: 3px;
-    color:whitesmoke;
 }
 
 .reg-sign{
     color:whitesmoke;
+}
+
+.reg-sign:hover{
+    color:red;
+    font-weight: bold;
 }
