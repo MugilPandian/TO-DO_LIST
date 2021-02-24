@@ -80,9 +80,9 @@ class LoginForm extends Component {
                         placeholder="Password"  />                        
                 )}
                 </FormItem>
-                <FormItem>
+                <FormItem className="register-link">
                     <Button type="primary" htmlType="submit" size="large" className="login-form-button">Login</Button>
-                    Or <Link to="/signup">register now!</Link>
+                    Or <Link className="register-link" to="/signup">register now!</Link>
                 </FormItem>
             </Form>
         );

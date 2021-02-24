@@ -87,7 +87,7 @@ class Signup extends Component {
                 <h1 className="page-title">Sign Up</h1>
                 <div className="signup-content">
                     <Form onSubmit={this.handleSubmit} className="signup-form">
-                        <FormItem 
+                        <FormItem className="sign-label"
                             label="Full Name"
                             validateStatus={this.state.name.validateStatus}
                             help={this.state.name.errorMsg}>
@@ -99,7 +99,7 @@ class Signup extends Component {
                                 value={this.state.name.value} 
                                 onChange={(event) => this.handleInputChange(event, this.validateName)} />    
                         </FormItem>
-                        <FormItem label="Username"
+                        <FormItem className="sign-label" label="Username"
                             hasFeedback
                             validateStatus={this.state.username.validateStatus}
                             help={this.state.username.errorMsg}>
@@ -112,7 +112,7 @@ class Signup extends Component {
                                 onBlur={this.validateUsernameAvailability}
                                 onChange={(event) => this.handleInputChange(event, this.validateUsername)} />    
                         </FormItem>
-                        <FormItem 
+                        <FormItem className="sign-label" 
                             label="Email"
                             hasFeedback
                             validateStatus={this.state.email.validateStatus}
@@ -127,7 +127,7 @@ class Signup extends Component {
                                 onBlur={this.validateEmailAvailability}
                                 onChange={(event) => this.handleInputChange(event, this.validateEmail)} />    
                         </FormItem>
-                        <FormItem 
+                        <FormItem className="sign-label"
                             label="Password"
                             validateStatus={this.state.password.validateStatus}
                             help={this.state.password.errorMsg}>
@@ -146,7 +146,7 @@ class Signup extends Component {
                                 size="large" 
                                 className="signup-form-button"
                                 disabled={this.isFormInvalid()}>Sign up</Button>
-                            Already registed? <Link to="/login">Login now!</Link>
+                            Already registed? <Link className="reg-sign" to="/login">Login now!</Link>
                         </FormItem>
                     </Form>
                 </div>
