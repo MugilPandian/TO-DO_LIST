@@ -46,7 +46,7 @@ class AppHeader extends Component {
               <Link to="/login">Login</Link>
             </Menu.Item>,
             <Menu.Item key="/signup">
-              <Link to="/signup">Signup</Link>
+              <Link to="/signup">Register</Link>
             </Menu.Item>                  
           ];
         }

@@ -1,7 +1,13 @@
+.con{
+    height: 685px;
+}
+
 .new-poll-container {
     max-width: 520px;
     margin: 0 auto;
     margin-top: 40px;
+    background-color: white;
+    padding:20px;
 }
 
 .create-poll-form-button {

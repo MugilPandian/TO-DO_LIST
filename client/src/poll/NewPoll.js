@@ -172,14 +172,15 @@ class NewPoll extends Component {
         });
 
         return (
+            <div className="con">
             <div className="new-poll-container">
-                <h1 className="page-title">Create Poll</h1>
+                <h1 className="page-title">Create A Plan</h1>
                 <div className="new-poll-content">
                     <Form onSubmit={this.handleSubmit} className="create-poll-form">
                         <FormItem validateStatus={this.state.question.validateStatus}
                             help={this.state.question.errorMsg} className="poll-form-row">
                         <TextArea 
-                            placeholder="Enter your question"
+                            placeholder="Plan Title"
                             style = {{ fontSize: '16px' }} 
                             autosize={{ minRows: 3, maxRows: 6 }} 
                             name = "question"
@@ -236,6 +237,7 @@ class NewPoll extends Component {
                         </FormItem>
                     </Form>
                 </div>    
+            </div>
             </div>
         );
     }

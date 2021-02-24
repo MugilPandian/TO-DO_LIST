@@ -24,7 +24,8 @@
   }
   
   .app-menu {
-    float: right;
+    float: right; 
+    
   }
   
   .app-menu > li {
