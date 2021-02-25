@@ -9,8 +9,9 @@ import {
     PASSWORD_MIN_LENGTH, PASSWORD_MAX_LENGTH
 } from '../../constants';
 
-import { Form, Input, Button, notification } from 'antd';
+import { Form, Input, Button, notification, Select } from 'antd';
 const FormItem = Form.Item;
+const Option =Select.Option;
 
 class Signup extends Component {
     constructor(props) {
@@ -27,13 +28,22 @@ class Signup extends Component {
             },
             password: {
                 value: ''
+            },
+            acctype:{
+                value: ''
             }
         }
+        this.handleSelectInputChange=this.handleSelectInputChange.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.validateUsernameAvailability = this.validateUsernameAvailability.bind(this);
         this.validateEmailAvailability = this.validateEmailAvailability.bind(this);
+        this.validateAccType=this.validateAccType.bind(this);
         this.isFormInvalid = this.isFormInvalid.bind(this);
+    }
+
+    handleSelectInputChange(value) {
+        this.setState({value: value});
     }
 
     handleInputChange(event, validationFun) {
@@ -56,7 +66,8 @@ class Signup extends Component {
             name: this.state.name.value,
             email: this.state.email.value,
             username: this.state.username.value,
-            password: this.state.password.value
+            password: this.state.password.value,
+            acctype: this.state.acctype.value
         };
         signup(signupRequest)
         .then(response => {
@@ -139,6 +150,26 @@ class Signup extends Component {
                                 placeholder="A password between 6 to 20 characters" 
                                 value={this.state.password.value} 
                                 onChange={(event) => this.handleInputChange(event, this.validatePassword)} />    
+                        </FormItem>
+                        <FormItem className="sign-label"
+                            label="Account Type"
+                            validateStatus={this.state.acctype.validateStatus}
+                            help={this.state.acctype.errorMsg}>
+
+                            <Select 
+                                size="large"
+                                name="acctype"
+                                value={this.state.value}
+                                onChange={this.handleSelectInputChange}>
+                                <Option 
+                                    value="Admin" >
+                                    Admin
+                                </Option>
+                                <Option
+                                    value="User" >
+                                User
+                                </Option>
+                            </Select>
                         </FormItem>
                         <FormItem>
                             <Button type="primary" 
@@ -347,6 +378,21 @@ class Signup extends Component {
                 validateStatus: 'success',
                 errorMsg: null,
             };            
+        }
+    }
+
+    validateAccType = (acctype) =>{
+        if(acctype==null){
+            return{
+                validateStatus: 'error',
+                errorMsg: 'Select an Account Type'
+            }
+        }
+        else{
+            return {
+                validateStatus: 'success',
+                errorMsg: null
+            };
         }
     }
 

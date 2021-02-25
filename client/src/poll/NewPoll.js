@@ -20,8 +20,8 @@ class NewPoll extends Component {
                 text: ''
             }],
             pollLength: {
-                days: 1,
-                hours: 0
+                days: 0,
+                hours: 1
             }
         };
         this.addChoice = this.addChoice.bind(this);
@@ -252,7 +252,7 @@ function PollChoice(props) {
                 placeholder = {'Action ' + (props.choiceNumber + 1)}
                 size="large"
                 value={props.choice.text} 
-                className={ props.choiceNumber > 1 ? "optional-choice": null}
+                // className={ props.choiceNumber > 1 ? "optional-choice": null}
                 onChange={(event) => props.handleChoiceChange(event, props.choiceNumber)} />
 
             {
