@@ -187,6 +187,7 @@ class NewPoll extends Component {
                             value = {this.state.question.text}
                             onChange = {this.handleQuestionChange} />
                         </FormItem>
+                            <h2>Actions to be Taken :</h2> 
                         {choiceViews}
                         {/* <FormItem className="poll-form-row">
                             <Button type="dashed" onClick={this.addChoice} disabled={this.state.choices.length === MAX_CHOICES}>
@@ -195,7 +196,7 @@ class NewPoll extends Component {
                         </FormItem> */}
                         <FormItem className="poll-form-row">
                             <Col xs={24} sm={4}>
-                                Poll length: 
+                                Deadline : 
                             </Col>
                             <Col xs={24} sm={20}>    
                                 <span style = {{ marginRight: '18px' }}>
@@ -248,7 +249,7 @@ function PollChoice(props) {
         <FormItem validateStatus={props.choice.validateStatus}
         help={props.choice.errorMsg} className="poll-form-row">
             <Input 
-                placeholder = {'Choice ' + (props.choiceNumber + 1)}
+                placeholder = {'Action ' + (props.choiceNumber + 1)}
                 size="large"
                 value={props.choice.text} 
                 className={ props.choiceNumber > 1 ? "optional-choice": null}
