@@ -188,11 +188,11 @@ class NewPoll extends Component {
                             onChange = {this.handleQuestionChange} />
                         </FormItem>
                         {choiceViews}
-                        <FormItem className="poll-form-row">
+                        {/* <FormItem className="poll-form-row">
                             <Button type="dashed" onClick={this.addChoice} disabled={this.state.choices.length === MAX_CHOICES}>
                                 <Icon type="plus" /> Add a choice
                             </Button>
-                        </FormItem>
+                        </FormItem> */}
                         <FormItem className="poll-form-row">
                             <Col xs={24} sm={4}>
                                 Poll length: 
